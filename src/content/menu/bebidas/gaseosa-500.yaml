@@ -1,0 +1,12 @@
+id: "gaseosa-500"
+categoria: "bebidas"
+nombre: "Gaseosa 500 ml"
+descripcion: "Coca Cola o Inca Kola, original o sin azúcar."
+precio: 5.5
+precioAnterior: null
+etiqueta: null
+opciones: null
+imagen: null
+disponible: true
+destacado: false
+orden: 2

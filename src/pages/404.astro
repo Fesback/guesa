@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TopBar from '../components/sections/TopBar.astro';
+import Footer from '../components/sections/Footer.astro';
+import Icon from '../components/ui/Icon.astro';
+import { siteConfig } from '../site.config';
+import { generalWhatsAppUrl } from '../lib/whatsapp';
+
+const waUrl = generalWhatsAppUrl();
+---
+
+<BaseLayout
+	title={`Página no encontrada | ${siteConfig.shortName}`}
+	description="Esa página no existe. Vuelve a la carta de Guesa y arma tu pedido por WhatsApp."
+>
+	<TopBar />
+
+	<main id="contenido" class="page-wrap flex min-h-[70vh] flex-col items-start justify-center py-16">
+		<p class="eyebrow">Error 404</p>
+		<h1 class="display-title mt-3 max-w-3xl">Esta página se fue con la última Guesa.</h1>
+		<p class="lead mt-4 max-w-xl">
+			El enlace no existe o cambió de lugar. Lo importante sigue en la carta: burgers, combos y
+			promos listas para pedir.
+		</p>
+		<div class="mt-6 flex flex-wrap gap-3">
+			<a class="btn btn--lg btn--primary" href="/#carta">
+				Ver la carta
+				<Icon name="arrow-right" size={19} />
+			</a>
+			<a class="btn btn--lg btn--whatsapp" href={waUrl} target="_blank" rel="noopener noreferrer">
+				<Icon name="whatsapp" size={19} />
+				Pedir por WhatsApp
+			</a>
+		</div>
+	</main>
+
+	<Footer />
+</BaseLayout>

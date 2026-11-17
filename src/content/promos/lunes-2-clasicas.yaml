@@ -1,0 +1,13 @@
+id: "lunes-2-clasicas"
+dia: "lunes"
+titulo: "2 Guesas Clásicas"
+detalle: "Dos clásicas para empezar la semana con todo."
+precio: 21.99
+precioAnterior: 30
+etiqueta: "Día de clásicas"
+tipo: "combo"
+incluye: ["2 Guesas Clásicas"]
+requiereBurger: false
+excluye: []
+disponible: true
+orden: 1

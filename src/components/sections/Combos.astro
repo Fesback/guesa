@@ -1,0 +1,106 @@
+---
+import Icon from '../ui/Icon.astro';
+import { formatMoney } from '../../lib/money';
+
+interface Combo {
+	id: string;
+	nombre: string;
+	descripcion: string;
+	incluye: string[];
+	precio: number;
+	precioAnterior: number | null;
+	etiqueta: string | null;
+	destacado: boolean;
+	orden: number;
+}
+
+interface Props {
+	combos: Combo[];
+}
+
+const { combos } = Astro.props;
+---
+
+<section class="section" id="combos" aria-labelledby="combos-title">
+	<div class="page-wrap">
+		<div class="section-head">
+			<div class="section-head__row">
+				<div class="max-w-2xl">
+					<p class="eyebrow">Haz COMBO tu Guesa y AHORRA</p>
+					<h2 class="display-title mt-2" id="combos-title">Para dos, tres o toda la mesa.</h2>
+					<p class="lead mt-3">
+						Combos armados con burgers, alitas, papas y chicha. Que no te dé cringe pedir lo
+						grande.
+					</p>
+				</div>
+				<span class="tag tag--blue hidden sm:inline-flex">
+					<Icon name="sparkle" size={14} />
+					Precio tachado, ahorro real
+				</span>
+			</div>
+		</div>
+
+		<div class="combo-grid">
+			{
+				combos.map((combo) => {
+					const saving = combo.precioAnterior ? combo.precioAnterior - combo.precio : 0;
+					return (
+						<article class:list={['combo-card', combo.destacado && 'combo-card--featured']}>
+							<div class="combo-card__head">
+								<div>
+									{combo.etiqueta && <span class="tag tag--white mb-2">{combo.etiqueta}</span>}
+									<h3 class="combo-card__name">{combo.nombre}</h3>
+								</div>
+								{combo.destacado && (
+									<span class="tag shrink-0">
+										<Icon name="star" size={12} />
+										Favorito
+									</span>
+								)}
+							</div>
+
+							<p class="combo-card__desc">{combo.descripcion}</p>
+
+							<ul class="combo-card__list">
+								{combo.incluye.map((item) => (
+									<li>
+										<Icon name="check" size={16} />
+										<span>{item}</span>
+									</li>
+								))}
+							</ul>
+
+							<div class="combo-card__foot">
+								<div>
+									<div class="flex flex-wrap items-baseline gap-2">
+										<p class="price">{formatMoney(combo.precio)}</p>
+										{combo.precioAnterior && <p class="price-old">{formatMoney(combo.precioAnterior)}</p>}
+									</div>
+									{saving > 0 && (
+										<p class="mt-1 text-xs font-extrabold text-[color:var(--color-secondary-ink)]">
+											Ahorras {formatMoney(saving)}
+										</p>
+									)}
+								</div>
+								<button
+									class="btn btn--sm"
+									type="button"
+									data-add
+									data-product-id={combo.id}
+									data-name={combo.nombre}
+									data-price={combo.precio}
+									data-category="combos"
+									data-has-options="false"
+									aria-label={`Agregar ${combo.nombre} al pedido`}
+								>
+									<Icon name="plus" size={16} />
+									<span data-add-label>Agregar</span>
+								</button>
+							</div>
+						</article>
+					);
+				})
+			}
+		</div>
+	</div>
+</section>

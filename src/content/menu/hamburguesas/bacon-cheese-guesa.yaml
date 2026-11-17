@@ -1,0 +1,12 @@
+id: "bacon-cheese-guesa"
+categoria: "hamburguesas"
+nombre: "Bacon Cheese Guesa"
+descripcion: "Carne 120 gr, doble cheddar, tocino crocante y salsa Guesa."
+precio: 22
+precioAnterior: null
+etiqueta: null
+opciones: "combo-burger"
+imagen: null
+disponible: true
+destacado: false
+orden: 5

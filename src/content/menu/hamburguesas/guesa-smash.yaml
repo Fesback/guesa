@@ -1,0 +1,12 @@
+id: "guesa-smash"
+categoria: "hamburguesas"
+nombre: "Guesa Smash"
+descripcion: "Doble smash de 90 gr, doble cheddar, cebolla caramelizada y salsa Guesa."
+precio: 26
+precioAnterior: null
+etiqueta: "Doble smash"
+opciones: "combo-burger"
+imagen: null
+disponible: true
+destacado: false
+orden: 7

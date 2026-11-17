@@ -1,0 +1,12 @@
+id: "cheddar-tocino-fries"
+categoria: "infaltables"
+nombre: "Cheddar Tocino Fries"
+descripcion: "Papas fritas con cheddar y tocino crocante."
+precio: 15
+precioAnterior: null
+etiqueta: null
+opciones: null
+imagen: null
+disponible: true
+destacado: false
+orden: 4

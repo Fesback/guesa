@@ -1,0 +1,13 @@
+id: "martes-doble"
+dia: "martes"
+titulo: "Hazla doble"
+detalle: "Doble carne + papas para sumar a tu burger. No aplica a Guesa Smash ni Five Guesa."
+precio: 6.99
+precioAnterior: null
+etiqueta: "Adicional"
+tipo: "upgrade"
+incluye: ["Doble carne","Papas fritas"]
+requiereBurger: true
+excluye: ["guesa-smash","five-guesa"]
+disponible: true
+orden: 3

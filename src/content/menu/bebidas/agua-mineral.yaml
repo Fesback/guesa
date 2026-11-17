@@ -1,0 +1,12 @@
+id: "agua-mineral"
+categoria: "bebidas"
+nombre: "Agua mineral"
+descripcion: "Botella de agua mineral."
+precio: 4
+precioAnterior: null
+etiqueta: null
+opciones: null
+imagen: null
+disponible: true
+destacado: false
+orden: 3

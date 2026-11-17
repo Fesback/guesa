@@ -1,0 +1,100 @@
+---
+import Icon from '../ui/Icon.astro';
+import { siteConfig } from '../../site.config';
+import { generalWhatsAppUrl } from '../../lib/whatsapp';
+
+const year = new Date().getFullYear();
+const waUrl = generalWhatsAppUrl();
+---
+
+<footer class="site-footer" id="footer">
+	<div class="page-wrap">
+		<div class="footer-grid">
+			<div>
+				<a class="footer-logo" href="/#inicio">GUESA</a>
+				<p class="mt-3 max-w-sm text-sm text-[color:var(--color-on-surface-variant)]">
+					Hamburguesas con estilo americano y alma criolla. Hechas en {siteConfig.address.district},
+					Lima.
+				</p>
+				<div class="mt-4 flex flex-wrap gap-2">
+					<a class="btn btn--sm btn--whatsapp" href={waUrl} target="_blank" rel="noopener noreferrer">
+						<Icon name="whatsapp" size={16} />
+						Pedir por WhatsApp
+					</a>
+					<a class="btn btn--sm" href="#carta">
+						<Icon name="bag" size={16} />
+						Ver carta
+					</a>
+				</div>
+			</div>
+
+			<div class="grid gap-5 sm:grid-cols-2 md:grid-cols-1">
+				<div>
+					<p class="text-xs font-extrabold uppercase tracking-wider text-[color:var(--color-on-surface-variant)]">
+						Visítanos
+					</p>
+					<address class="mt-2 text-sm not-italic leading-relaxed">
+						{siteConfig.address.street}<br />
+						{siteConfig.address.district}, {siteConfig.address.city}<br />
+						<a class="footer-link mt-1 inline-flex items-center gap-1" href={siteConfig.mapsUrl} target="_blank" rel="noopener noreferrer">
+							Ver mapa
+							<Icon name="arrow-up-right" size={14} />
+						</a>
+					</address>
+				</div>
+				<div>
+					<p class="text-xs font-extrabold uppercase tracking-wider text-[color:var(--color-on-surface-variant)]">
+						Contacto
+					</p>
+					<ul class="mt-2 grid gap-1 text-sm">
+						<li><a class="footer-link" href={waUrl} target="_blank" rel="noopener noreferrer">{siteConfig.whatsappDisplay}</a></li>
+						<li>
+							<a
+								class="footer-link"
+								href={siteConfig.socials.instagram}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								Instagram
+							</a>
+						</li>
+						<li>
+							<a
+								class="footer-link"
+								href={siteConfig.socials.tiktok}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								TikTok
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div>
+				<p class="text-xs font-extrabold uppercase tracking-wider text-[color:var(--color-on-surface-variant)]">
+					Carta en tu mesa
+				</p>
+				<div class="qr-card mt-2">
+					<img src="/qr-carta.png" width="96" height="96" alt="Código QR para abrir la carta de Guesa" loading="lazy" />
+					<div class="text-xs font-semibold leading-snug">
+						Escanea o descarga el QR para abrir la carta.
+						<a class="footer-link mt-2 inline-flex items-center gap-1" href="/qr-carta.png" download="qr-carta-guesa.png">
+							Descargar QR
+							<Icon name="arrow-right" size={13} />
+						</a>
+					</div>
+				</div>
+				<p class="mt-3 text-xs text-[color:var(--color-on-surface-variant)]">
+					Horario: {siteConfig.hoursSummary}
+				</p>
+			</div>
+		</div>
+
+		<div class="footer-bottom">
+			<p>© {year} {siteConfig.name}. Todos los derechos reservados.</p>
+			<p>Precios en soles peruanos · Delivery se confirma por WhatsApp</p>
+		</div>
+	</div>
+</footer>

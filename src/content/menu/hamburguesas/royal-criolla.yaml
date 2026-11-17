@@ -1,0 +1,12 @@
+id: "royal-criolla"
+categoria: "hamburguesas"
+nombre: "Royal Criolla"
+descripcion: "Carne 120 gr, cheddar, huevo frito, tocino, cebolla caramelizada y salsa Guesa."
+precio: 19
+precioAnterior: null
+etiqueta: null
+opciones: "combo-burger"
+imagen: null
+disponible: true
+destacado: false
+orden: 2

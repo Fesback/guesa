@@ -1,0 +1,116 @@
+---
+import Icon from '../ui/Icon.astro';
+import CategoryArt from '../art/CategoryArt.astro';
+import { formatMoney } from '../../lib/money';
+
+type Category = 'hamburguesas' | 'alitas' | 'infaltables' | 'bebidas' | 'extras';
+
+interface ComboOption {
+	id: string;
+	nombre: string;
+	precio: number;
+	descripcion: string;
+}
+
+interface ComboOptionSet {
+	id: string;
+	nombre: string;
+	ayuda: string;
+	opciones: ComboOption[];
+}
+
+interface MenuItem {
+	id: string;
+	categoria: Category;
+	nombre: string;
+	descripcion: string;
+	precio: number;
+	precioAnterior: number | null;
+	etiqueta: string | null;
+	opciones: string | null;
+	destacado: boolean;
+}
+
+interface Props {
+	item: MenuItem;
+	optionSet?: ComboOptionSet;
+}
+
+const { item, optionSet } = Astro.props;
+const combo = item.opciones && optionSet && item.opciones === optionSet.id ? optionSet : null;
+const inputName = `combo-${item.id}`;
+---
+
+<article
+	class:list={['menu-card', item.destacado && 'menu-card--featured']}
+	data-product-card
+	data-category={item.categoria}
+	data-product-id={item.id}
+	data-featured={item.destacado ? 'true' : 'false'}
+>
+	<div class="menu-card__art">
+		{item.etiqueta && (
+			<span class="tag menu-card__tag">
+				<Icon name="sparkle" size={12} />
+				{item.etiqueta}
+			</span>
+		)}
+		<div class="ml-auto">
+			<CategoryArt category={item.categoria} class="opacity-95" />
+		</div>
+	</div>
+
+	<div class="menu-card__body">
+		<div class="menu-card__topline">
+			<h4 class="menu-card__name">{item.nombre}</h4>
+			<div class="shrink-0 text-right">
+				<p class="price">{formatMoney(item.precio)}</p>
+				{item.precioAnterior && <p class="price-old">antes {formatMoney(item.precioAnterior)}</p>}
+			</div>
+		</div>
+
+		<p class="menu-card__desc">{item.descripcion}</p>
+
+		{combo && (
+			<div class="menu-card__combo">
+				<p class="menu-card__combo-title">{combo.nombre} · {combo.ayuda}</p>
+				<fieldset class="segmented">
+					<legend class="sr-only">Elige el combo para {item.nombre}</legend>
+					{combo.opciones.map((option, index) => (
+						<label>
+							<input
+								type="radio"
+								name={inputName}
+								value={option.id}
+								checked={index === 0}
+								data-option-name={option.nombre}
+								data-option-price={option.precio}
+							/>
+							<span class="option">
+								{option.nombre}
+								<small>{option.precio === 0 ? 'Sin extra' : `+ ${formatMoney(option.precio)}`}</small>
+							</span>
+						</label>
+					))}
+				</fieldset>
+			</div>
+		)}
+
+		<div class="mt-auto pt-1">
+			<button
+				class="btn btn--sm btn--block"
+				type="button"
+				data-add
+				data-product-id={item.id}
+				data-name={item.nombre}
+				data-price={item.precio}
+				data-category={item.categoria}
+				data-has-options={combo ? 'true' : 'false'}
+				aria-label={`Agregar ${item.nombre} al pedido`}
+			>
+				<Icon name="plus" size={17} />
+				<span data-add-label>Agregar</span>
+			</button>
+		</div>
+	</div>
+</article>

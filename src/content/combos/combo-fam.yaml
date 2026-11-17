@@ -1,0 +1,10 @@
+id: "combo-fam"
+nombre: "Combo Fam"
+descripcion: "La mesa completa: tres burgers distintas, alitas y papas familiares."
+incluye: ["1 Guesa Clásica","1 Royal Criolla","1 Bacon Jam Guesa","6 alitas","Papas fritas familiares","1 chicha grande de 1 lt"]
+precio: 99.99
+precioAnterior: 114
+etiqueta: "Para 4–5"
+destacado: false
+disponible: true
+orden: 3

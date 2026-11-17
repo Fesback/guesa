@@ -1,0 +1,80 @@
+---
+interface Props {
+	class?: string;
+	label?: string;
+}
+
+const { class: className = '', label } = Astro.props;
+---
+
+<svg
+	xmlns="http://www.w3.org/2000/svg"
+	viewBox="0 0 520 470"
+	class={className}
+	role={label ? 'img' : undefined}
+	aria-hidden={label ? undefined : 'true'}
+>
+	{label && <title>{label}</title>}
+	<ellipse cx="260" cy="438" rx="190" ry="18" fill="#0F1F4D" opacity="0.14"></ellipse>
+
+	<g stroke="#0F1F4D" stroke-width="8" stroke-linejoin="round" stroke-linecap="round">
+		<!-- Bottom bun -->
+		<path
+			d="M92 358h336c12 0 20 8 20 19v8c0 21-17 34-40 34H112c-23 0-40-13-40-34v-8c0-11 8-19 20-19Z"
+			fill="#E7A052"></path>
+		<path d="M100 366h320" fill="none" stroke="#C97A34" stroke-width="5"></path>
+
+		<!-- Patty -->
+		<rect x="82" y="306" width="356" height="55" rx="27" fill="#6E4027"></rect>
+		<path d="M116 322c24-5 48-5 72 0M252 330c30-6 60-6 90 0" fill="none" stroke="#4A2816" stroke-width="5"></path>
+
+		<!-- Cheese -->
+		<path
+			d="M82 256h356v33c-18 4-24 27-42 27s-20-20-38-20-18 31-40 31-22-32-42-32-18 24-38 24-22-23-40-23-20 30-38 30-22-33-38-33v-37Z"
+			fill="#FFC83D"></path>
+		<path d="M118 270h80M278 270h76" fill="none" stroke="#E9A91F" stroke-width="5"></path>
+
+		<!-- Bacon jam -->
+		<path
+			d="M97 288c24-9 44 7 68 0 25-8 45 8 69 0 25-8 45 8 69 0 24-7 45 8 68 0 13-4 22-2 31 1v20c-26 7-44-6-67 1-24 7-45-8-69 0-24 7-45-8-69 0-24 7-45-8-69 0-11 4-21 4-31 2v-24Z"
+			fill="#9E2F26"></path>
+		<path d="M146 300c22-3 36 4 52 1M270 300c20-3 34 4 50 1" fill="none" stroke="#7A1F18" stroke-width="4"></path>
+
+		<!-- Lettuce -->
+		<path
+			d="M69 252c16 16 32 16 48 0 16 16 32 16 48 0 16 16 32 16 48 0 16 16 32 16 48 0 16 16 32 16 48 0 16 16 32 16 48 0 16 16 32 16 48 0 16 16 32 16 48 0v-22H69v22Z"
+			fill="#7FB54B"></path>
+
+		<!-- Top bun -->
+		<path
+			d="M74 238c0-100 84-170 186-170s186 70 186 170H74Z"
+			fill="#F4B466"></path>
+		<path d="M104 222c14-68 76-118 156-118" fill="none" stroke="#FFD59E" stroke-width="8" opacity="0.8"></path>
+		<path d="M76 238h368" fill="none" stroke-width="7"></path>
+	</g>
+
+	<!-- Sesame seeds -->
+	<g fill="#FFF1CC" stroke="#0F1F4D" stroke-width="3">
+		<ellipse cx="166" cy="154" rx="11" ry="5.5" transform="rotate(-18 166 154)"></ellipse>
+		<ellipse cx="224" cy="124" rx="11" ry="5.5" transform="rotate(12 224 124)"></ellipse>
+		<ellipse cx="286" cy="134" rx="11" ry="5.5" transform="rotate(-12 286 134)"></ellipse>
+		<ellipse cx="346" cy="166" rx="11" ry="5.5" transform="rotate(20 346 166)"></ellipse>
+		<ellipse cx="250" cy="184" rx="10" ry="5" transform="rotate(2 250 184)"></ellipse>
+		<ellipse cx="196" cy="206" rx="9" ry="4.5" transform="rotate(-8 196 206)"></ellipse>
+		<ellipse cx="330" cy="208" rx="9" ry="4.5" transform="rotate(8 330 208)"></ellipse>
+	</g>
+
+	<!-- Pickles peeking out -->
+	<g stroke="#0F1F4D" stroke-width="6">
+		<circle cx="104" cy="292" r="13" fill="#6FA84A"></circle>
+		<circle cx="118" cy="282" r="10" fill="#86BC5B"></circle>
+		<circle cx="424" cy="300" r="13" fill="#6FA84A"></circle>
+	</g>
+
+	<!-- Accent crumbs -->
+	<g fill="#F2682B">
+		<circle cx="58" cy="208" r="7"></circle>
+		<circle cx="464" cy="184" r="6"></circle>
+		<circle cx="454" cy="246" r="4"></circle>
+	</g>
+</svg>

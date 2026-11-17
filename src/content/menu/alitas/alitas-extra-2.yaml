@@ -1,0 +1,12 @@
+id: "alitas-extra-2"
+categoria: "alitas"
+nombre: "+2 alitas"
+descripcion: "Suma dos alitas más a tu orden."
+precio: 5.9
+precioAnterior: null
+etiqueta: null
+opciones: null
+imagen: null
+disponible: true
+destacado: false
+orden: 3

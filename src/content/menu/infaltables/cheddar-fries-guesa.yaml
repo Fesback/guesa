@@ -1,0 +1,12 @@
+id: "cheddar-fries-guesa"
+categoria: "infaltables"
+nombre: "Cheddar Fries Guesa"
+descripcion: "Papas fritas con salsa de queso cheddar."
+precio: 11
+precioAnterior: null
+etiqueta: null
+opciones: null
+imagen: null
+disponible: true
+destacado: false
+orden: 3

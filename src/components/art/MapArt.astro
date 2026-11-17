@@ -1,0 +1,77 @@
+---
+interface Props {
+	class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<svg
+	xmlns="http://www.w3.org/2000/svg"
+	viewBox="0 0 640 520"
+	class={className}
+	preserveAspectRatio="xMidYMid slice"
+	aria-hidden="true"
+>
+	<rect width="640" height="520" fill="#F0E6D2"></rect>
+
+	<!-- Blocks -->
+	<g fill="#F6EFE0" stroke="#0F1F4D" stroke-width="3" opacity="0.95">
+		<rect x="42" y="54" width="132" height="86" rx="10"></rect>
+		<rect x="198" y="42" width="164" height="98" rx="10"></rect>
+		<rect x="386" y="58" width="106" height="76" rx="10"></rect>
+		<rect x="510" y="44" width="88" height="96" rx="10"></rect>
+		<rect x="44" y="174" width="118" height="104" rx="10"></rect>
+		<rect x="188" y="170" width="88" height="108" rx="10"></rect>
+		<rect x="302" y="172" width="128" height="82" rx="10"></rect>
+		<rect x="452" y="162" width="146" height="116" rx="10"></rect>
+		<rect x="52" y="308" width="150" height="132" rx="10"></rect>
+		<rect x="226" y="306" width="112" height="92" rx="10"></rect>
+		<rect x="360" y="302" width="234" height="88" rx="10"></rect>
+		<rect x="228" y="426" width="144" height="70" rx="10"></rect>
+		<rect x="396" y="420" width="196" height="76" rx="10"></rect>
+	</g>
+
+	<!-- Park -->
+	<path d="M92 188h42v54H92z" fill="#A9C982" stroke="#0F1F4D" stroke-width="3"></path>
+	<path d="M490 338h84v34h-84z" fill="#A9C982" stroke="#0F1F4D" stroke-width="3"></path>
+
+	<!-- Streets -->
+	<g stroke="#0F1F4D" stroke-width="12" stroke-linecap="square">
+		<path d="M0 154h640"></path>
+		<path d="M0 290h640"></path>
+		<path d="M0 408h640"></path>
+		<path d="M178 0v520"></path>
+		<path d="M438 0v520"></path>
+		<path d="M0 0l640 520"></path>
+	</g>
+
+	<g stroke="#FBF6EC" stroke-width="4" stroke-dasharray="10 9" stroke-linecap="round">
+		<path d="M0 154h640"></path>
+		<path d="M0 290h640"></path>
+		<path d="M178 0v520"></path>
+		<path d="M438 0v520"></path>
+	</g>
+
+	<!-- Sea -->
+	<path d="M0 0h74c-8 74 24 118 72 154-54 24-88 60-98 118-9 55 6 108 40 152H0V0Z" fill="#C9D7F4"></path>
+	<path d="M28 74c14 24 12 44 2 66M18 180c22 8 34 28 34 54" fill="none" stroke="#1B45C9" stroke-width="4" stroke-linecap="round" opacity="0.45"></path>
+
+	<!-- Pin -->
+	<g transform="translate(322 258)">
+		<circle cx="0" cy="0" r="46" fill="#F2682B" stroke="#0F1F4D" stroke-width="4" opacity="0.32"></circle>
+		<path
+			d="M0-40c-19 0-34 15-34 34 0 25 34 52 34 52s34-27 34-52c0-19-15-34-34-34Z"
+			fill="#F2682B"
+			stroke="#0F1F4D"
+			stroke-width="5"
+			stroke-linejoin="round"></path>
+		<circle cx="0" cy="-7" r="12" fill="#FFF1CC" stroke="#0F1F4D" stroke-width="4"></circle>
+	</g>
+
+	<g font-family="Arial, sans-serif" font-weight="700" fill="#0F1F4D">
+		<text x="42" y="38" font-size="14" letter-spacing="2">MIRAFLORES</text>
+		<text x="470" y="496" font-size="12" letter-spacing="2">MALECÓN</text>
+		<text x="210" y="500" font-size="12" letter-spacing="2">PARQUE</text>
+	</g>
+</svg>

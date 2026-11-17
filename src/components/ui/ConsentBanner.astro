@@ -1,0 +1,30 @@
+---
+import { analyticsConfigured } from '../../lib/analytics';
+
+const enabled = analyticsConfigured();
+---
+
+{
+	enabled && (
+		<div
+			class="consent-banner"
+			data-consent-banner
+			role="region"
+			aria-label="Preferencias de analítica"
+			hidden
+		>
+			<p>
+				Usamos analítica para entender qué productos y promos funcionan. Solo se activa si aceptas.
+				Puedes seguir pidiendo sin aceptar.
+			</p>
+			<div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.75rem">
+				<button class="btn btn--sm btn--primary" type="button" data-consent="granted">
+					Aceptar analítica
+				</button>
+				<button class="btn btn--sm" type="button" data-consent="denied">
+					Solo lo necesario
+				</button>
+			</div>
+		</div>
+	)
+}

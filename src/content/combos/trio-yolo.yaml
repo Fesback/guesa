@@ -1,0 +1,10 @@
+id: "trio-yolo"
+nombre: "Trío Yolo"
+descripcion: "Tres clásicas, alitas y papas. Ideal para la previa."
+incluye: ["3 Guesas Clásicas","4 alitas","1 papas Guesa mediana","1 chicha grande de 1 lt"]
+precio: 69.99
+precioAnterior: 84
+etiqueta: "Para 3"
+destacado: true
+disponible: true
+orden: 2

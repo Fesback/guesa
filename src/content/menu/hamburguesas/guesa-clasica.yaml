@@ -1,0 +1,12 @@
+id: "guesa-clasica"
+categoria: "hamburguesas"
+nombre: "Guesa Clásica"
+descripcion: "Carne 120 gr, cheddar, lechuga, tomate, cebolla y salsa Guesa."
+precio: 15
+precioAnterior: null
+etiqueta: null
+opciones: "combo-burger"
+imagen: null
+disponible: true
+destacado: false
+orden: 1

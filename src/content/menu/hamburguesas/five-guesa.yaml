@@ -1,0 +1,12 @@
+id: "five-guesa"
+categoria: "hamburguesas"
+nombre: "Five Guesa"
+descripcion: "Cinco carnes de 90 gr, cheddar, tocino, cebolla crispy y salsa Guesa."
+precio: 23
+precioAnterior: 27
+etiqueta: "Nuevo lanzamiento"
+opciones: "combo-burger"
+imagen: null
+disponible: true
+destacado: true
+orden: 8

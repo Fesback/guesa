@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Guesa">
+	<rect width="64" height="64" rx="14" fill="#0F1F4D"/>
+	<path d="M14 29c0-8.2 8.1-14 18-14s18 5.8 18 14H14Z" fill="#F2682B"/>
+	<path d="M12 33h40" stroke="#FBF6EC" stroke-width="4" stroke-linecap="round"/>
+	<path d="M14 39c3.2 3.4 6.8 3.4 10 0 3.2 3.4 6.8 3.4 10 0 3.2 3.4 6.8 3.4 10 0" fill="none" stroke="#7FB54B" stroke-width="4" stroke-linecap="round"/>
+	<path d="M14 47h36" stroke="#FFC83D" stroke-width="5" stroke-linecap="round"/>
+</svg>

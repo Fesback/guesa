@@ -1,0 +1,12 @@
+id: "salchiguesa-clasica"
+categoria: "infaltables"
+nombre: "Salchiguesa clásica"
+descripcion: "Salchicha a la parrilla, papas y salsa Guesa."
+precio: 15
+precioAnterior: null
+etiqueta: null
+opciones: null
+imagen: null
+disponible: true
+destacado: false
+orden: 2

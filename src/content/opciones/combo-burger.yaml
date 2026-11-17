@@ -1,0 +1,4 @@
+id: "combo-burger"
+nombre: "Haz COMBO tu Guesa"
+ayuda: "Elige cómo acompañar tu burger. Se suma al precio base."
+opciones: [{"id":"solo","nombre":"Solo","precio":0,"descripcion":"La burger, sin acompañamiento."},{"id":"papas-o-chicha","nombre":"Papas o chicha","precio":4.5,"descripcion":"Elige una."},{"id":"combo-clasico","nombre":"Papas + chicha","precio":5.9,"descripcion":"El combo clásico."},{"id":"combo-cheddar","nombre":"Papas con queso + gaseosa","precio":9.9,"descripcion":"Cheddar fries y gaseosa."}]

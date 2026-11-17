@@ -1,0 +1,63 @@
+---
+import Icon from '../ui/Icon.astro';
+import { generalWhatsAppUrl } from '../../lib/whatsapp';
+
+const steps = [
+	{
+		title: 'Elige tu Guesa',
+		body: 'Escoge tu burger favorita y súmale papas, chicha o el combo que más te provoque.',
+		icon: 'bag' as const,
+	},
+	{
+		title: 'Revisa tu pedido',
+		body: 'Ajusta cantidades, elige delivery o recojo y deja tus notas. El total se calcula al toque.',
+		icon: 'check' as const,
+	},
+	{
+		title: 'Envía por WhatsApp',
+		body: 'El mensaje se arma solo. Nosotros confirmamos el delivery y te decimos cuándo llega.',
+		icon: 'whatsapp' as const,
+	},
+];
+
+const waUrl = generalWhatsAppUrl();
+---
+
+<section class="section bg-surface-container-low border-y-2 border-on-surface" id="como-pedir" aria-labelledby="how-title">
+	<div class="page-wrap">
+		<div class="section-head">
+			<div class="section-head__row">
+				<div class="max-w-2xl">
+					<p class="eyebrow">Cómo pedir</p>
+					<h2 class="display-title mt-2" id="how-title">Tres pasos. Cero vueltas.</h2>
+					<p class="lead mt-3">Sin apps, sin registro y sin pasar por Linktree. Todo termina en un chat.</p>
+				</div>
+				<div class="flex flex-wrap gap-2">
+					<a class="btn btn--sm btn--primary" href="#carta">
+						Empezar pedido
+						<Icon name="arrow-right" size={16} />
+					</a>
+					<a class="btn btn--sm btn--whatsapp" href={waUrl} target="_blank" rel="noopener noreferrer">
+						<Icon name="whatsapp" size={16} />
+						Pedir directo
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<ol class="steps">
+			{
+				steps.map((step, index) => (
+					<li class="step">
+						<span class="step__num">{String(index + 1).padStart(2, '0')}</span>
+						<h3>{step.title}</h3>
+						<p>{step.body}</p>
+						<span class="mt-auto pt-2 text-[color:var(--color-primary)]" aria-hidden="true">
+							<Icon name={step.icon} size={24} />
+						</span>
+					</li>
+				))
+			}
+		</ol>
+	</div>
+</section>

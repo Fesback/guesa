@@ -1,0 +1,51 @@
+---
+import Icon from '../ui/Icon.astro';
+import { generalWhatsAppUrl } from '../../lib/whatsapp';
+
+interface FaqItem {
+	pregunta: string;
+	respuesta: string;
+	orden: number;
+}
+
+interface Props {
+	items: FaqItem[];
+}
+
+const { items } = Astro.props;
+const waUrl = generalWhatsAppUrl();
+---
+
+<section class="section bg-surface-container-low border-y-2 border-on-surface" id="faq" aria-labelledby="faq-title">
+	<div class="page-wrap">
+		<div class="section-head">
+			<div class="section-head__row">
+				<div class="max-w-2xl">
+					<p class="eyebrow">Preguntas frecuentes</p>
+					<h2 class="display-title mt-2" id="faq-title">Lo que todos preguntan.</h2>
+					<p class="lead mt-3">
+						Si tu duda no está aquí, escríbenos. Contestamos rápido, incluso antes de que pidas.
+					</p>
+				</div>
+				<a class="btn btn--sm btn--whatsapp shrink-0" href={waUrl} target="_blank" rel="noopener noreferrer">
+					<Icon name="whatsapp" size={17} />
+					Preguntar por WhatsApp
+				</a>
+			</div>
+		</div>
+
+		<div class="faq-list">
+			{
+				items.map((item, index) => (
+					<details class="faq-item" name="guesa-faq" open={index === 0}>
+						<summary>
+							<span>{item.pregunta}</span>
+							<span class="faq-item__icon" aria-hidden="true" />
+						</summary>
+						<div class="faq-item__answer">{item.respuesta}</div>
+					</details>
+				))
+			}
+		</div>
+	</div>
+</section>

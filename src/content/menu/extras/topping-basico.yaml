@@ -1,0 +1,12 @@
+id: "topping-basico"
+categoria: "extras"
+nombre: "Topping básico"
+descripcion: "Huevo frito, cheddar, edam o pepinillos."
+precio: 3
+precioAnterior: null
+etiqueta: null
+opciones: null
+imagen: null
+disponible: true
+destacado: false
+orden: 2

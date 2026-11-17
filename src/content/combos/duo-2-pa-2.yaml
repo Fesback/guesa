@@ -1,0 +1,10 @@
+id: "duo-2-pa-2"
+nombre: "Dúo 2 pa 2"
+descripcion: "Dos burgers, cheddar fries y chicha para compartir en pareja."
+incluye: ["1 Guesa Clásica","1 Bacon Cheese Guesa","1 Cheddar Fries Guesa","2 chichas personales"]
+precio: 49.99
+precioAnterior: 62
+etiqueta: "Para 2"
+destacado: false
+disponible: true
+orden: 1

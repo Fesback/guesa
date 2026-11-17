@@ -1,0 +1,13 @@
+id: "jueves-royal"
+dia: "jueves"
+titulo: "Royal Criolla completa"
+detalle: "La Royal Criolla con papas y bebida. Que no te dé cringe pedir lo grande."
+precio: 22.99
+precioAnterior: null
+etiqueta: "Jueves de Royal"
+tipo: "combo"
+incluye: ["1 Royal Criolla","Papas","Bebida"]
+requiereBurger: false
+excluye: []
+disponible: true
+orden: 4

@@ -1,0 +1,12 @@
+id: "aloha-guesa"
+categoria: "hamburguesas"
+nombre: "Aloha Guesa"
+descripcion: "Carne 120 gr, cheddar, mermelada de piña, tocino, lechuga y salsa Guesa."
+precio: 20
+precioAnterior: null
+etiqueta: null
+opciones: "combo-burger"
+imagen: null
+disponible: true
+destacado: false
+orden: 3

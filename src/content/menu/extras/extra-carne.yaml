@@ -1,0 +1,12 @@
+id: "extra-carne"
+categoria: "extras"
+nombre: "+1 carne"
+descripcion: "Una carne más de 90 gr para tu burger."
+precio: 4
+precioAnterior: null
+etiqueta: null
+opciones: null
+imagen: null
+disponible: true
+destacado: false
+orden: 1

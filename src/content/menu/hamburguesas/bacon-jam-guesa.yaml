@@ -1,0 +1,12 @@
+id: "bacon-jam-guesa"
+categoria: "hamburguesas"
+nombre: "Bacon Jam Guesa"
+descripcion: "Carne 120 gr, cheddar, mermelada de tocino, pepinillos encurtidos y salsa Guesa."
+precio: 23
+precioAnterior: null
+etiqueta: "La más pedida"
+opciones: "combo-burger"
+imagen: null
+disponible: true
+destacado: true
+orden: 6

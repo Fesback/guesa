@@ -1,0 +1,12 @@
+id: "topping-premium"
+categoria: "extras"
+nombre: "Topping premium"
+descripcion: "Tocino, salsa de queso, mermelada de tocino, cebolla caramelizada, mermelada de piña o cebolla crispy."
+precio: 4
+precioAnterior: null
+etiqueta: null
+opciones: null
+imagen: null
+disponible: true
+destacado: false
+orden: 3

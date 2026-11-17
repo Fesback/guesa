@@ -1,0 +1,12 @@
+id: "guesa-parrillera"
+categoria: "hamburguesas"
+nombre: "Guesa Parrillera"
+descripcion: "Carne 120 gr, cheddar, cebolla crispy, tocino, BBQ y salsa Guesa."
+precio: 20
+precioAnterior: null
+etiqueta: null
+opciones: "combo-burger"
+imagen: null
+disponible: true
+destacado: false
+orden: 4

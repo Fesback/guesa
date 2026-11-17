@@ -1,0 +1,122 @@
+---
+import Icon from '../ui/Icon.astro';
+import MenuCard from './MenuCard.astro';
+import { MENU_CATEGORIES } from '../../lib/menu';
+import { generalWhatsAppUrl } from '../../lib/whatsapp';
+import type { MenuCategoryId } from '../../lib/menu';
+
+interface ComboOption {
+	id: string;
+	nombre: string;
+	precio: number;
+	descripcion: string;
+}
+
+interface ComboOptionSet {
+	id: string;
+	nombre: string;
+	ayuda: string;
+	opciones: ComboOption[];
+}
+
+interface MenuItem {
+	id: string;
+	categoria: MenuCategoryId;
+	nombre: string;
+	descripcion: string;
+	precio: number;
+	precioAnterior: number | null;
+	etiqueta: string | null;
+	opciones: string | null;
+	destacado: boolean;
+	orden: number;
+}
+
+interface Props {
+	items: MenuItem[];
+	optionSet?: ComboOptionSet;
+}
+
+const { items, optionSet } = Astro.props;
+const waUrl = generalWhatsAppUrl();
+---
+
+<section class="section" id="carta" aria-labelledby="carta-title" data-menu-section>
+	<div class="page-wrap">
+		<div class="section-head">
+			<div class="section-head__row">
+				<div class="max-w-2xl">
+					<p class="eyebrow">La carta</p>
+					<h2 class="display-title mt-2" id="carta-title">Pide sin vueltas.</h2>
+					<p class="lead mt-3">
+						Elige tu Guesa, súmale combo y agrega al pedido. Si prefieres, también puedes pedir
+						todo por WhatsApp.
+					</p>
+				</div>
+				<a class="btn btn--sm btn--whatsapp shrink-0" href={waUrl} target="_blank" rel="noopener noreferrer">
+					<Icon name="whatsapp" size={17} />
+					Pedir por WhatsApp
+				</a>
+			</div>
+		</div>
+
+		<div class="menu-layout">
+			<aside class="menu-chips" aria-label="Filtrar la carta">
+				<div class="menu-chips__track" role="group" aria-label="Categorías de la carta">
+					<button class="chip is-active" type="button" data-menu-filter="all" aria-pressed="true">
+						Todo
+					</button>
+					{
+						MENU_CATEGORIES.map((category) => (
+							<button class="chip" type="button" data-menu-filter={category.id} aria-pressed="false">
+								{category.label}
+							</button>
+						))
+					}
+				</div>
+			</aside>
+
+			<div class="menu-groups">
+				{
+					MENU_CATEGORIES.map((category) => {
+						const categoryItems = items.filter((item) => item.categoria === category.id);
+						if (!categoryItems.length) return null;
+						return (
+							<div data-menu-group={category.id}>
+								<div class="menu-group__head">
+									<div>
+										<h3 class="menu-group__title">{category.title}</h3>
+										<p class="mt-1 text-sm text-[color:var(--color-on-surface-variant)]">
+											{category.note}
+										</p>
+									</div>
+									<span class="menu-group__count">{categoryItems.length} opciones</span>
+								</div>
+								<div class="menu-grid">
+									{categoryItems.map((item) => (
+										<MenuCard item={item} optionSet={optionSet} />
+									))}
+								</div>
+							</div>
+						);
+					})
+				}
+			</div>
+		</div>
+
+		<div class="mt-8 flex flex-wrap items-center gap-3 rounded-[var(--radius-card)] border-2 border-on-surface bg-surface-container-low p-4 shadow-[var(--shadow-hard-sm)]">
+			<Icon name="info" size={20} />
+			<p class="text-sm font-semibold">
+				El carrito necesita JavaScript. Si algo no carga, pide directo por WhatsApp.
+			</p>
+			<a class="btn btn--sm btn--whatsapp ml-auto" href={waUrl} target="_blank" rel="noopener noreferrer">
+				<Icon name="whatsapp" size={16} />
+				Escribir
+			</a>
+		</div>
+	</div>
+</section>
+
+<script>
+	import '../../scripts/menu';
+</script>

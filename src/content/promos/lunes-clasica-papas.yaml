@@ -1,0 +1,13 @@
+id: "lunes-clasica-papas"
+dia: "lunes"
+titulo: "Clásica + papas gratis"
+detalle: "Tu Guesa Clásica con papas fritas de regalo."
+precio: 15
+precioAnterior: 23
+etiqueta: "Papas gratis"
+tipo: "gratis"
+incluye: ["1 Guesa Clásica","Papas fritas"]
+requiereBurger: false
+excluye: []
+disponible: true
+orden: 2

@@ -1,0 +1,80 @@
+---
+type Category = 'hamburguesas' | 'alitas' | 'infaltables' | 'bebidas' | 'extras';
+
+interface Props {
+	category: Category;
+	class?: string;
+}
+
+const { category, class: className = '' } = Astro.props;
+const stroke = '#0F1F4D';
+---
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 110" class={className} aria-hidden="true">
+	{
+		category === 'hamburguesas' && (
+			<g stroke={stroke} stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+				<path d="M18 51c0-19 17-32 42-32s42 13 42 32H18Z" fill="#F4B466" />
+				<path d="M15 55h90" fill="none" />
+				<path d="M20 54c7 7 13 7 20 0 7 7 13 7 20 0 7 7 13 7 20 0 7 7 13 7 20 0" fill="none" stroke="#7FB54B" stroke-width="8" />
+				<path d="M21 63h78v8c-6 2-7 8-13 8s-8-7-14-7-8 9-15 9-9-8-15-8-8 7-14 7-5-7-7-8v-9Z" fill="#FFC83D" />
+				<rect x="23" y="78" width="74" height="13" rx="6.5" fill="#6E4027" />
+				<path d="M26 91h68c5 0 8 3 8 7 0 6-5 9-11 9H29c-6 0-11-3-11-9 0-4 3-7 8-7Z" fill="#E7A052" />
+				<g fill="#FFF1CC">
+					<ellipse cx="45" cy="37" rx="4.5" ry="2.2" transform="rotate(-16 45 37)" />
+					<ellipse cx="64" cy="30" rx="4.5" ry="2.2" transform="rotate(10 64 30)" />
+					<ellipse cx="79" cy="40" rx="4.5" ry="2.2" transform="rotate(-8 79 40)" />
+				</g>
+			</g>
+		)
+	}
+	{
+		category === 'alitas' && (
+			<g stroke={stroke} stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+				<path d="M36 74c-9-3-17-12-19-24-2-10 1-19 8-23 6-4 13-1 17 6 3 6 3 13 1 21-2 7-2 11 2 15" fill="#F2682B" />
+				<path d="M82 72c10-5 17-15 18-28 1-11-3-19-11-21-7-2-13 3-16 11-2 6-1 13 2 20 2 6 2 10-1 14" fill="#F2682B" />
+				<path d="M43 79c-8 2-14 8-13 15 1 6 8 9 14 6 5-3 6-9 3-15" fill="#F4B466" />
+				<path d="M76 78c8 3 13 10 11 17-2 6-9 8-14 4-4-3-4-10 0-16" fill="#F4B466" />
+				<path d="M43 47c5-2 9 1 10 7M65 45c-4 1-6 5-5 10" fill="none" stroke="#C2470F" stroke-width="3" />
+				<circle cx="60" cy="36" r="4" fill="#FFF1CC" />
+				<path d="M52 30c3-5 14-5 17 0" fill="none" stroke="#7FB54B" stroke-width="3" />
+			</g>
+		)
+	}
+	{
+		category === 'infaltables' && (
+			<g stroke={stroke} stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+				<path d="M35 39h50l-6 54H41L35 39Z" fill="#F2682B" />
+				<path d="M31 39h58" fill="none" />
+				<path d="M42 42 39 24M53 42l-4-22M65 42l-1-25M77 42l4-22" fill="none" stroke="#FFC83D" stroke-width="10" />
+				<path d="M43 57h34M42 69h36" fill="none" stroke="#C2470F" stroke-width="3" />
+				<path d="M50 82c6 7 14 7 20 0" fill="none" />
+				<path d="M83 65c6 0 10 5 10 11s-4 11-10 11" fill="none" stroke="#7FB54B" stroke-width="7" />
+			</g>
+		)
+	}
+	{
+		category === 'bebidas' && (
+			<g stroke={stroke} stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+				<path d="M36 31h48l-6 68H42l-6-68Z" fill="#FFC83D" />
+				<path d="M33 31h54" fill="none" />
+				<path d="M65 20 52 32" fill="none" />
+				<path d="M43 52h34M44 70h32" fill="none" stroke="#E9A91F" stroke-width="4" />
+				<path d="M48 39c3 16 3 34 1 49" fill="none" stroke="#FFF1CC" stroke-width="4" opacity="0.8" />
+				<circle cx="78" cy="24" r="7" fill="#F2682B" />
+			</g>
+		)
+	}
+	{
+		category === 'extras' && (
+			<g stroke={stroke} stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+				<path d="M25 78 63 29c4-6 10-6 17-3l15 7c5 2 6 7 3 12L60 94c-3 4-7 4-11 2l-20-9c-4-2-5-5-4-9Z" fill="#FFC83D" />
+				<path d="M39 67c11-6 20-4 28 3 8 7 11 5 21-2" fill="none" stroke="#E9A91F" stroke-width="4" />
+				<circle cx="58" cy="59" r="4" fill="#0F1F4D" />
+				<circle cx="80" cy="45" r="3" fill="#0F1F4D" />
+				<circle cx="42" cy="83" r="3" fill="#0F1F4D" />
+				<path d="M88 23v14M81 30h14" fill="none" stroke="#1B45C9" stroke-width="4" />
+			</g>
+		)
+	}
+</svg>

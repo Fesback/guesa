@@ -1,0 +1,71 @@
+---
+import Icon from '../ui/Icon.astro';
+import BurgerArt from '../art/BurgerArt.astro';
+import { formatMoney } from '../../lib/money';
+---
+
+<section class="hero" id="inicio" aria-labelledby="hero-title">
+	<div class="hero__shape hero__shape--blue" aria-hidden="true" data-hero-shape></div>
+	<div class="hero__shape hero__shape--orange" aria-hidden="true" data-hero-shape></div>
+
+	<div class="page-wrap hero__grid">
+		<div class="relative z-10 order-2 md:order-1">
+			<p class="eyebrow" data-hero-eyebrow>Miraflores, Lima · Delivery por WhatsApp</p>
+			<h1 class="hero__title mt-4" id="hero-title" data-hero-title>
+				Hamburguesas con estilo americano y <span class="word-accent">alma criolla</span>.
+			</h1>
+			<p class="lead mt-5" data-hero-copy>
+				Carne jugosa, pan suave y salsas de la casa. Arma tu pedido en menos de un minuto y envíalo
+				por WhatsApp.
+			</p>
+
+			<div class="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap" data-hero-actions>
+				<a class="btn btn--lg btn--primary btn--block sm:w-auto" href="#carta">
+					Ver carta y pedir
+					<Icon name="arrow-right" size={20} />
+				</a>
+				<a class="btn btn--lg btn--secondary btn--block sm:w-auto" href="#promos">
+					Promo de hoy
+					<Icon name="sparkle" size={20} />
+				</a>
+			</div>
+
+			<div class="hero__meta" data-hero-meta>
+				<span><Icon name="scooter" size={16} /> Delivery en Miraflores y zonas</span>
+				<span><Icon name="clock" size={16} /> Todos los días desde las 12:00</span>
+				<span><Icon name="wallet" size={16} /> Yape, Plin y efectivo</span>
+			</div>
+		</div>
+
+		<div class="hero__art order-1 md:order-2" data-hero-art>
+			<svg class="hero__dots" viewBox="0 0 100 60" aria-hidden="true" data-hero-shape>
+				<g fill="currentColor">
+					{Array.from({ length: 5 }).map((_, row) =>
+						Array.from({ length: 8 }).map((__, col) => (
+							<circle cx={6 + col * 12} cy={6 + row * 12} r="2"></circle>
+						)),
+					)}
+				</g>
+			</svg>
+
+			<div class="hero__art-inner" data-hero-sticker>
+				<BurgerArt class="w-full drop-shadow-[8px_8px_0_rgba(15,31,77,0.16)]" label="Ilustración de la Bacon Jam Guesa" />
+			</div>
+
+			<div class="sticker hero__sticker-label" data-hero-label>
+				<span class="flex items-center gap-1 text-[0.68rem] font-extrabold">
+					<Icon name="star" size={13} class="text-[color:var(--color-secondary-ink)]" />
+					La más pedida
+				</span>
+				<span class="display text-[1.1rem] leading-none">Bacon Jam</span>
+			</div>
+
+			<div class="sticker hero__sticker-price" data-hero-price>
+				<span class="text-[0.6rem] font-extrabold tracking-wide text-[color:var(--color-on-surface-variant)]">
+					DESDE
+				</span>
+				<span class="display text-[1.55rem] leading-none">{formatMoney(23)}</span>
+			</div>
+		</div>
+	</div>
+</section>

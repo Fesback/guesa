@@ -1,0 +1,12 @@
+id: "chicha-familiar"
+categoria: "bebidas"
+nombre: "Chicha morada 1 lt"
+descripcion: "Botella familiar de chicha morada de la casa."
+precio: 14
+precioAnterior: null
+etiqueta: null
+opciones: null
+imagen: null
+disponible: true
+destacado: false
+orden: 1

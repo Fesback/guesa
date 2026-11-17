@@ -1,0 +1,87 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TopBar from '../components/sections/TopBar.astro';
+import Hero from '../components/sections/Hero.astro';
+import Marquee from '../components/sections/Marquee.astro';
+import Promos from '../components/sections/Promos.astro';
+import Menu from '../components/sections/Menu.astro';
+import Combos from '../components/sections/Combos.astro';
+import HowTo from '../components/sections/HowTo.astro';
+import Info from '../components/sections/Info.astro';
+import Faq from '../components/sections/Faq.astro';
+import Footer from '../components/sections/Footer.astro';
+import CartIsland from '../components/islands/CartIsland';
+import { siteConfig } from '../site.config';
+import { getLimaDay } from '../lib/today';
+import { sortMenuByCategory } from '../lib/menu';
+import { restaurantJsonLd, faqJsonLd } from '../lib/seo';
+
+const menuEntries = await getCollection('menu', ({ data }) => data.disponible);
+const comboEntries = await getCollection('combos', ({ data }) => data.disponible);
+const promoEntries = await getCollection('promos', ({ data }) => data.disponible);
+const faqEntries = await getCollection('faq');
+const optionEntries = await getCollection('opciones');
+
+const menuItems = sortMenuByCategory(
+	menuEntries.map(({ data }) => ({
+		id: data.id,
+		categoria: data.categoria,
+		nombre: data.nombre,
+		descripcion: data.descripcion,
+		precio: data.precio,
+		precioAnterior: data.precioAnterior,
+		etiqueta: data.etiqueta,
+		opciones: data.opciones,
+		destacado: data.destacado,
+		orden: data.orden,
+	})),
+);
+
+const combos = comboEntries
+	.map(({ data }) => data)
+	.sort((a, b) => a.orden - b.orden);
+
+const promos = promoEntries.map(({ data }) => data);
+const faq = faqEntries
+	.map(({ data }) => data)
+	.sort((a, b) => a.orden - b.orden);
+
+const optionSet = optionEntries.find(({ data }) => data.id === 'combo-burger')?.data;
+const today = getLimaDay();
+
+const marqueeItems = [
+	'Carne 120 gr',
+	'Pan suave',
+	'Salsas de la casa',
+	'Delivery en Miraflores',
+	'Yape · Plin · Efectivo',
+];
+
+const structuredData = [
+	restaurantJsonLd(menuItems, combos),
+	...(faq.length ? [faqJsonLd(faq)] : []),
+];
+---
+
+<BaseLayout
+	title={siteConfig.seo.defaultTitle}
+	description={siteConfig.description}
+	jsonLd={structuredData}
+>
+	<TopBar />
+
+	<main id="contenido">
+		<Hero />
+		<Marquee items={marqueeItems} />
+		<Promos promos={promos} today={today} />
+		<Menu items={menuItems} optionSet={optionSet} />
+		<Combos combos={combos} />
+		<HowTo />
+		<Info />
+		<Faq items={faq} />
+	</main>
+
+	<Footer />
+	<CartIsland client:load />
+</BaseLayout>
